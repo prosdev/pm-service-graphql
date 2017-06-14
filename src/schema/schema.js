@@ -1,10 +1,5 @@
 import {
-    GraphQLObjectType,
-    GraphQLString,
-    GraphQLInt,
-    GraphQLSchema,
-    GraphQLList,
-    GraphQLNonNull
+    GraphQLSchema
 } from 'graphql';
 import MutationType from '../types/MutationType';
 import RootQueryType from '../types/rootQueryType';
@@ -15,3 +10,4 @@ const schema = new GraphQLSchema({
 });
 
 export default schema;
+

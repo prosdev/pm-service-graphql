@@ -5,6 +5,7 @@ import {
 } from 'graphql';
 import PropertyType from './propertyType';
 import faker from 'faker';
+import propertyService from '../services/propertyService';
 
 const properties = [
     {
@@ -27,8 +28,9 @@ const RootQueryType = new GraphQLObjectType({
     fields: {
         properties: {
             type: new GraphQLList(PropertyType),
-            resolve() {
-                return properties;
+            description: 'Get a list of properties. Specify fields to return properties with only needed fields.',
+            resolve: async (properties) => {
+                return await propertyService.getProperties(properties);
             }
         }
     }

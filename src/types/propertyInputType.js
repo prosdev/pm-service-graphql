@@ -3,27 +3,23 @@ import {
     GraphQLString,
     GraphQLList
 } from 'graphql';
-import LocationType from './locationType';
+import Location from './locationType';
 
-const PropertyType = new GraphQLObjectType({
-   name: 'Property',
+const InputPropertyType = new GraphQLObjectType({
+    name: 'InputProperty',
     description: 'Properties can be a multitude of things. In our case, we imagine properties to be houses, condos, apartments, etc.',
     fields: {
         name: {
-           type: GraphQLString,
+            type: GraphQLString,
             description: 'The name of the property'
         },
         description: {
-           type: GraphQLString,
+            type: GraphQLString,
             description: 'A description of property.'
         },
         location: {
-            type: LocationType,
+            type: Location,
             description: 'Location object for property. Contains street address, lng and lat for coordinates.'
-        },
-        slug: {
-            type: GraphQLString,
-            description: 'A user friendly id associated with property'
         },
         thumbImage: {
             type: new GraphQLList(GraphQLString),
@@ -40,4 +36,4 @@ const PropertyType = new GraphQLObjectType({
     }
 });
 
-export default PropertyType;
+export default InputPropertyType;

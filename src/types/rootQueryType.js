@@ -1,20 +1,34 @@
 import {
-    GraphQLObjectType
+    GraphQLObjectType,
+    GraphQLID,
+    GraphQLList
 } from 'graphql';
-import PortfolioType from '../types/portfolioType';
+import PropertyType from './propertyType';
+import faker from 'faker';
 
-const portoflios = [{
-    id: "1",
-    name: "Porfolio"
-}];
+const properties = [
+    {
+        name: faker.name.findName(),
+        description : faker.lorem.paragraph()
+    },
+    {
+        name: faker.name.findName(),
+        description : faker.lorem.paragraph()
+    },
+    {
+        name: faker.name.findName(),
+        description : faker.lorem.paragraph()
+    }
+];
 
 const RootQueryType = new GraphQLObjectType({
     name: 'RootQueryType',
+    description: 'The root access to the many query possibilities contained in our service.',
     fields: {
-        portfolio: {
-            type: PortfolioType,
-            resolve(parentValue, args, req) {
-                return portoflios;
+        properties: {
+            type: new GraphQLList(PropertyType),
+            resolve() {
+                return properties;
             }
         }
     }

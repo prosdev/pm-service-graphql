@@ -11,7 +11,7 @@ import expressValidator from 'express-validator';
 import mongoose from 'mongoose';
 const MongoStore = require('connect-mongo')(session);
 import schema from './src/schema/schema';
-
+import cors from 'cors';
 // Make sure we are running node 7.6+
 const [major, minor] = process.versions.node.split('.').map(parseFloat);
 if (major <= 7 && minor <= 5) {
@@ -32,7 +32,7 @@ require('./src/models/Property');
 
 const PORT = 4000;
 const server = express();
-
+server.use('*', cors({ origin: 'http://localhost:3000' }));
 // Takes the raw requests and turns them into usable properties on req.body
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));

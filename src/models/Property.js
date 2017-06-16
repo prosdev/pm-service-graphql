@@ -55,4 +55,4 @@ const generateUniqueSlugs = async function (next) {
 
 PropertySchema.pre('save', generateUniqueSlugs);
 
-module.exports = mongoose.model('Property', PropertySchema);
+export default mongoose.model('Property', PropertySchema);

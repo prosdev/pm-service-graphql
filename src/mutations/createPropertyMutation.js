@@ -1,8 +1,7 @@
 import {
     GraphQLList,
     GraphQLNonNull,
-    GraphQLString,
-    GraphQLObjectType
+    GraphQLString
 } from 'graphql';
 
 import InputPropertyType from '../types/propertyInputType';

@@ -14,8 +14,8 @@ const createTransactionMutation = {
     description: 'A mutation to add a property given the required fields.',
     args: {
         name: {
-            name: 'Transaction name',
-            type: new GraphQLNonNull(GraphQLString)
+            type: new GraphQLNonNull(GraphQLString),
+            description: 'Transaction name'
         },
         note: {
             type: GraphQLString,

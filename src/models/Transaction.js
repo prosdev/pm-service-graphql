@@ -7,9 +7,13 @@ const TransactionSchema = new Schema({
         required: 'Must supply a name for transaction',
         trim: true
     },
-    price: {
+    note: {
+        type: String,
+        trim: true
+    },
+    amount: {
         type: Number,
-        required: 'Must supply a price for transaction'
+        required: 'Must supply an amount for transaction'
     },
     category: [String],
     type: {

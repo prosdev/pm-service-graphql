@@ -29,6 +29,7 @@ mongoose.connection.on('error', (err) => {
 // READY?! Let's go!
 //import all of our models
 require('./src/models/Property');
+require('./src/models/Transaction');
 
 const PORT = 4000;
 const server = express();

@@ -7,7 +7,7 @@ import {
 import LocationType from './locationType';
 
 const PropertyType = new GraphQLObjectType({
-   name: 'Property',
+    name: 'Property',
     description: 'Properties can be a multitude of things. In our case, we imagine properties to be houses, condos, apartments, etc.',
     fields: {
         id: {
